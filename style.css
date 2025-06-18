@@ -3,3 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.mybox {
+    width: 12em;
+    border: 15px solid green;
+    background-color: green;
+    padding: 1em;
+    margin-top: 42em;
+    margin-left: 55em;
+}
