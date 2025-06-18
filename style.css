@@ -9,6 +9,11 @@
     border: 15px solid green;
     background-color: green;
     padding: 1em;
-    margin-top: 42em;
-    margin-left: 55em;
+
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
 }
