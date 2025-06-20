@@ -11,18 +11,28 @@ box.style.position = 'absolute';
 function updateBoxPosition() {
     box.style.left = boxX + 'px';
 }
-window.addEventListener("keydown", function (e) {
 
-    if (!e.repeat) {
-        console.log(`Key ${e.key} is pressed`);
-    } else {
-        console.log(`Key ${e.key} is repeating`);
-    }
+function centerBox() {
+    const boxWidth = box.offsetWidth;
+    const windowWidth = window.innerWidth;
+    boxX = (windowWidth - boxWidth) / 2;
+    updateBoxPosition();
+}
+
+
+// Center box initially and on window resize
+centerBox();
+window.addEventListener('resize', centerBox);
+
+window.addEventListener("keydown", function (e) {
+    const boxWidth = box.offsetWidth;
 
     if (e.key === 'ArrowLeft') {
-        boxX -= moveBox;
+        boxX = Math.max(0, boxX - moveAmount); // Don't go past left edge
     } else if (e.key === 'ArrowRight') {
-        boxX += moveBox;
+        const maxRight = window.innerWidth - boxWidth;
+        boxX = Math.min(maxRight, boxX + moveAmount); // Don't go past right edge
     }
 
+    updateBoxPosition();
 });
