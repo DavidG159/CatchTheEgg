@@ -4,12 +4,13 @@ let box = document.querySelector('.mybox');
 
 //box movement
 let boxX = 50;
-let boxY = 50;
 const moveBox = 10;
 
+box.style.position = 'absolute';
 
-
-
+function updateBoxPosition() {
+    box.style.left = boxX + 'px';
+}
 window.addEventListener("keydown", function (e) {
 
     if (!e.repeat) {
@@ -23,8 +24,5 @@ window.addEventListener("keydown", function (e) {
     } else if (e.key === 'ArrowRight') {
         boxX += moveBox;
     }
-
-    box.style.left = boxX + 'px';
-
 
 });
