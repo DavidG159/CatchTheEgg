@@ -2,6 +2,13 @@
 
 let box = document.querySelector('.mybox');
 
+//box movement
+let boxX = 50;
+let boxY = 50;
+const moveBox = 10;
+
+
+
 
 window.addEventListener("keydown", function (e) {
 
@@ -10,6 +17,14 @@ window.addEventListener("keydown", function (e) {
     } else {
         console.log(`Key ${e.key} is repeating`);
     }
+
+    if (e.key === 'ArrowLeft') {
+        boxX -= moveBox;
+    } else if (e.key === 'ArrowRight') {
+        boxX += moveBox;
+    }
+
+    box.style.left = boxX + 'px';
 
 
 });
