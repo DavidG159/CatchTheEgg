@@ -19,18 +19,12 @@ function updateBoxPosition() {
 }
 
 function centerBox() {
-    const boxWidth = box.offsetWidth;
-    const windowWidth = window.innerWidth;
-    boxX = (windowWidth - boxWidth) / 2;
-    updateBoxPosition();
+    const boxWidth = box.offsetWidth;// Get total box width
+    const windowWidth = window.innerWidth; //Get window width
+    boxX = (windowWidth - boxWidth) / 2; //Calculate center position
+    updateBoxPosition(); //Apply the position
 }
 
-// function centerBox() {
-//     const boxWidth = box.offsetWidth; // Get total box width
-//     const windowWidth = window.innerWidth; // Get window width
-//     boxX = (windowWidth - boxWidth) / 2; // Calculate center position
-//     updateBoxPosition(); // Apply the position
-// }
 
 // Center box initially and on window resize
 centerBox();
