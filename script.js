@@ -25,6 +25,11 @@ function centerBox() {
     updateBoxPosition(); //Apply the position
 }
 
+// Whenever the browser window changes size
+
+// Re-center the box automatically
+
+// Without this, your box would stay in the same pixel position when resizing
 
 // Center box initially and on window resize
 centerBox();
