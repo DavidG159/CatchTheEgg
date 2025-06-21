@@ -6,6 +6,10 @@ let box = document.querySelector('.mybox');
 //box movement
 let boxX = 50;
 const moveBox = 20;
+let boxY = 50;
+
+
+
 
 box.style.position = 'absolute';
 
