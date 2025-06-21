@@ -25,6 +25,12 @@ function centerBox() {
     updateBoxPosition();
 }
 
+// function centerBox() {
+//     const boxWidth = box.offsetWidth; // Get total box width
+//     const windowWidth = window.innerWidth; // Get window width
+//     boxX = (windowWidth - boxWidth) / 2; // Calculate center position
+//     updateBoxPosition(); // Apply the position
+// }
 
 // Center box initially and on window resize
 centerBox();
