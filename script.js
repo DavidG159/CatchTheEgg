@@ -1,5 +1,6 @@
 'use strict';
 
+//variables
 let box = document.querySelector('.mybox');
 
 //box movement
@@ -8,6 +9,7 @@ const moveBox = 20;
 
 box.style.position = 'absolute';
 
+//Functions
 function updateBoxPosition() {
     box.style.left = boxX + 'px';
 }
