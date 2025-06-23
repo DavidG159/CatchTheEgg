@@ -2,6 +2,7 @@
 
 //variables
 let box = document.querySelector('.mybox');
+let ball = document.querySelector('.myball');
 
 //box movement
 let boxX = 20;
@@ -18,6 +19,19 @@ function updateBoxPosition() {
     box.style.left = boxX + 'px';
 }
 
+function spawnBall() {
+    setInterval(function () {
+        const randomBall = Math.floor(Math.random() * 3) + 1;// Generates a random number between 1 and 3
+        for (let i = 0; i < randomBall; i++) {
+
+        }
+    });
+}
+
+// Whenever the browser window changes size
+// Re-center the box automatically
+// Without this, your box would stay in the same pixel position when resizing
+// Center box initially and on window resize
 function centerBox() {
     const boxWidth = box.offsetWidth;// Get total box width
     const windowWidth = window.innerWidth; //Get window width
@@ -25,13 +39,7 @@ function centerBox() {
     updateBoxPosition(); //Apply the position
 }
 
-// Whenever the browser window changes size
 
-// Re-center the box automatically
-
-// Without this, your box would stay in the same pixel position when resizing
-
-// Center box initially and on window resize
 centerBox();
 window.addEventListener('resize', centerBox);
 
