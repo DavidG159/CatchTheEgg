@@ -4,9 +4,9 @@
 let box = document.querySelector('.mybox');
 
 //box movement
-let boxX = 50;
+let boxX = 20;
 const moveBox = 20;
-let boxY = 50;
+
 
 
 

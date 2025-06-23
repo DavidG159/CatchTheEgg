@@ -19,3 +19,7 @@ body {
     height: 100vh;
     background-color: gray;
 }
+
+.space {
+    margin-top: 20em;
+}
