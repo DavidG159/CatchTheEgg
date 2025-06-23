@@ -21,5 +21,13 @@ body {
 }
 
 .space {
-    margin-top: 20em;
+    margin-top: 5em;
+}
+
+.ball {
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
 }
