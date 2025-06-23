@@ -16,21 +16,29 @@ const moveBox = 20;
 
 box.style.position = 'absolute';
 
+
+let numtest = Math.random();
+let result = Math.floor(numtest * 10);
+console.log(numtest, result);
+
+
+
+
 //Functions
 function updateBoxPosition() {
     box.style.left = boxX + 'px';
 }
 
 //spawn ball but the problem is that it wont stop spawning...
-function spawnBall() {
-    setInterval(function () {
-        const randomBall = Math.floor(Math.random() * 3) + 1;// Generates a random number between 1 and 3
-        for (let i = 0; i <= randomBall; i++) {
-            console.log("ball has spawned!");
+// function spawnBall() {
+//     setInterval(function () {
+//         const randomBall = Math.floor(Math.random() * 3) + 1;// Generates a random number between 1 and 3
+//         for (let i = 0; i <= randomBall; i++) {
+//             console.log("ball has spawned!");
 
-        }
-    });
-}
+//         }
+//     });
+// }
 
 // Whenever the browser window changes size
 // Re-center the box automatically
