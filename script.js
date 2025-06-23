@@ -4,6 +4,8 @@
 let box = document.querySelector('.mybox');
 let ball = document.querySelector('.myball');
 
+const newball = document.createElement('mybox');
+
 //box movement
 let boxX = 20;
 const moveBox = 20;
@@ -19,10 +21,12 @@ function updateBoxPosition() {
     box.style.left = boxX + 'px';
 }
 
+//spawn ball but the problem is that it wont stop spawning...
 function spawnBall() {
     setInterval(function () {
         const randomBall = Math.floor(Math.random() * 3) + 1;// Generates a random number between 1 and 3
-        for (let i = 0; i < randomBall; i++) {
+        for (let i = 0; i <= randomBall; i++) {
+            console.log("ball has spawned!");
 
         }
     });
@@ -38,7 +42,6 @@ function centerBox() {
     boxX = (windowWidth - boxWidth) / 2; //Calculate center position
     updateBoxPosition(); //Apply the position
 }
-
 
 centerBox();
 window.addEventListener('resize', centerBox);
