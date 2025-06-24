@@ -3,53 +3,19 @@
 //variables
 let box = document.querySelector('.mybox');
 let ball = document.querySelector('.myball');
-let test;
+let numBalls;
+
 //box movement
 let boxX = 20;
 const moveBox = 20;
 box.style.position = 'absolute';
 
+console.log(box.offsetWidth, ' - boxoffsetWidth');
+console.log(ball.offsetWidth);
+
 //BallSize
 const ballWidth = window.innerWidth - ball.offsetWidth;
 const ballHeight = ball.offsetHeight;
-
-//Ball
-function theBall() {
-    let randomX = Math.floor(Math.random() * ballWidth);
-    let randomY = 0;
-    const newball = document.createElement('div');
-    newball.setAttribute('class', 'myball');
-    document.body.append(newball);
-    newball.style.left = randomX + 'px';
-    newball.style.top = randomY + 'px';
-
-    console.log(randomX, 'RandomX');
-    console.log(ballWidth, 'ballWidth');
-
-}
-
-
-theBall();
-theBall();
-
-
-let numBalls;
-
-function testBall() {
-    numBalls = Math.floor(Math.random() * 3) + 1;
-
-    console.log(numBalls);
-
-    for (let i = 0; i < numBalls; i++) {
-        console.log('ballSpawned!');
-
-    }
-
-}
-
-testBall();
-
-
 
 
 //Functions
@@ -57,16 +23,27 @@ function updateBoxPosition() {
     box.style.left = boxX + 'px';
 }
 
-//spawn ball but the problem is that it wont stop spawning...
-// function spawnBall() {
-//     setInterval(function () {
-//         const randomBall = Math.floor(Math.random() * 3) + 1;// Generates a random number between 1 and 3
-//         for (let i = 0; i <= randomBall; i++) {
-//             console.log("ball has spawned!");
+//create Ball
+function theBall() {
+    let randomX = Math.floor(Math.random() * ballWidth);
+    let randomY = 0;
+    const newball = document.createElement('div');  //creates a new div
+    newball.setAttribute('class', 'myball');        // adds the class myball to get the css
+    document.body.append(newball);                  //adds the div to the body tag
+    newball.style.left = randomX + 'px';
+    newball.style.top = randomY + 'px';
+}
 
-//         }
-//     });
-// }
+//spawnBall
+function spawnBall() {
+    numBalls = Math.floor(Math.random() * 3) + 1;   //Generates a random number on how many balls will spawn
+    for (let i = 0; i < numBalls; i++) {
+        theBall();
+    }
+
+}
+
+box.offs
 
 // Whenever the browser window changes size
 // Re-center the box automatically
@@ -82,8 +59,13 @@ function centerBox() {
 centerBox();
 window.addEventListener('resize', centerBox);
 
+
+
+//=======================================================
+
 window.addEventListener("keydown", function (e) {
     const boxWidth = box.offsetWidth;
+
 
     if (e.key === 'ArrowLeft') {
         boxX = Math.max(0, boxX - moveBox); // Don't go past left edge
