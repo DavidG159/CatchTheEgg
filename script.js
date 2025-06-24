@@ -7,7 +7,6 @@ let numBalls;
 
 //box movement
 let boxX = 20;
-let ballPos = 0;
 const moveBox = 20;
 box.style.position = 'absolute';
 
@@ -22,12 +21,25 @@ function updateBoxPosition() {
     box.style.left = boxX + 'px';
 }
 
+
+//test
+let nums = 0;
+let ballPos = 0;
+
 //ballFall animation
 function fallAnimation() {
 
+    nums++;
+    console.log(nums);
+
+    if (nums < 300) {
+        requestAnimationFrame(fallAnimation);
+    }
 
 
 }
+
+window.requestAnimationFrame(fallAnimation);
 
 
 //create Ball
@@ -45,7 +57,7 @@ function theBall() {
 function spawnBall() {
     numBalls = Math.floor(Math.random() * 3) + 1;   //Generates a random number on how many balls will spawn
     for (let i = 0; i < numBalls; i++) {
-        theBall();
+        // theBall();
     }
 
 }
