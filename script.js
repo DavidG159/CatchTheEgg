@@ -4,7 +4,8 @@
 let box = document.querySelector('.mybox');
 let ball = document.querySelector('.myball');
 
-const newball = document.createElement('myball');
+
+let test;
 
 //box movement
 let boxX = 20;
@@ -21,10 +22,22 @@ let numtest = Math.random();
 let result = Math.floor(numtest * 10);
 console.log(numtest, result);
 
+const newball = document.createElement('myball');
+let numBalls;
 
 function testBall() {
-    newball = ball.floor(Math.random() * 3) + 1;
+    numBalls = Math.floor(Math.random() * 3) + 1;
+
+    console.log(numBalls);
+
+    for (let i = 0; i < numBalls; i++) {
+        console.log('ballSpawned!');
+
+    }
+
 }
+
+testBall();
 
 
 
