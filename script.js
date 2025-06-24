@@ -24,7 +24,7 @@ function updateBoxPosition() {
 
 //test
 let nums = 0;
-let ballPos = 0;
+
 
 //ballFall animation
 function fallAnimation() {
@@ -39,7 +39,19 @@ function fallAnimation() {
 
 }
 
-window.requestAnimationFrame(fallAnimation);
+console.log(document.body.clientHeight);
+
+function move(theball) {
+    ballPos = 0;
+    ballPos += 5;
+    theball.style.transform = `translateY(${ballPos}px)`;
+    let hh = document.body.clientHeight - 250;
+    if (ballPos < hh) {
+        requestAnimationFrame(move);
+    }
+}
+
+window.requestAnimationFrame(move);
 
 
 //create Ball
@@ -51,7 +63,10 @@ function theBall() {
     document.body.append(newball);                  //adds the div to the body tag
     newball.style.left = randomX + 'px';
     newball.style.top = randomY + 'px';
+    move(newball);
 }
+
+theBall();
 
 //spawnBall
 function spawnBall() {
