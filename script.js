@@ -7,21 +7,28 @@ let numBalls;
 
 //box movement
 let boxX = 20;
+let ballPos = 0;
 const moveBox = 20;
 box.style.position = 'absolute';
-
-console.log(box.offsetWidth, ' - boxoffsetWidth');
-console.log(ball.offsetWidth);
 
 //BallSize
 const ballWidth = window.innerWidth - ball.offsetWidth;
 const ballHeight = ball.offsetHeight;
 
+console.log("Viewport width:", window.innerWidth);
 
 //Functions
 function updateBoxPosition() {
     box.style.left = boxX + 'px';
 }
+
+//ballFall animation
+function fallAnimation() {
+
+
+
+}
+
 
 //create Ball
 function theBall() {
@@ -43,8 +50,6 @@ function spawnBall() {
 
 }
 
-box.offs
-
 // Whenever the browser window changes size
 // Re-center the box automatically
 // Without this, your box would stay in the same pixel position when resizing
@@ -62,6 +67,9 @@ window.addEventListener('resize', centerBox);
 
 
 //=======================================================
+
+
+spawnBall();
 
 window.addEventListener("keydown", function (e) {
     const boxWidth = box.offsetWidth;
