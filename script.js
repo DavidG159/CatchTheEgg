@@ -3,26 +3,26 @@
 //variables
 let box = document.querySelector('.mybox');
 let ball = document.querySelector('.myball');
-
-
 let test;
-
 //box movement
 let boxX = 20;
 const moveBox = 20;
-
-
-
-
-
 box.style.position = 'absolute';
 
 
-let numtest = Math.random();
-let result = Math.floor(numtest * 10);
-console.log(numtest, result);
+function theBall() {
+    const newball = document.createElement('div');
+    newball.setAttribute('class', 'myball');
+    document.body.append(newball);
+}
 
-const newball = document.createElement('myball');
+theBall();
+theBall();
+theBall();
+
+
+
+
 let numBalls;
 
 function testBall() {
