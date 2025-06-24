@@ -4,7 +4,7 @@
 let box = document.querySelector('.mybox');
 let ball = document.querySelector('.myball');
 
-const newball = document.createElement('mybox');
+const newball = document.createElement('myball');
 
 //box movement
 let boxX = 20;
@@ -20,6 +20,11 @@ box.style.position = 'absolute';
 let numtest = Math.random();
 let result = Math.floor(numtest * 10);
 console.log(numtest, result);
+
+
+function testBall() {
+    newball = ball.floor(Math.random() * 3) + 1;
+}
 
 
 
