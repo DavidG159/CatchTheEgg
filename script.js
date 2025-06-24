@@ -9,18 +9,27 @@ let boxX = 20;
 const moveBox = 20;
 box.style.position = 'absolute';
 
+//BallSize
+const ballWidth = ball.offsetWidth;
+const ballHeight = ball.offsetHeight;
 
+//Ball
 function theBall() {
+    let randomX = (Math.floor(Math.random() * (window.innerWidth - ballWidth)));
+    let randomY = (Math.floor(Math.random() * (window.innerHeight - ballHeight)));
     const newball = document.createElement('div');
     newball.setAttribute('class', 'myball');
     document.body.append(newball);
+    newball.style.left = randomX + 'px';
+    newball.style.top = randomY + 'px';
+
+    console.log(randomX, randomY);
+
 }
 
-theBall();
-theBall();
-theBall();
 
-
+theBall();
+theBall();
 
 
 let numBalls;
