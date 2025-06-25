@@ -4,7 +4,7 @@
 let box = document.querySelector('.mybox');
 let ball = document.querySelector('.myball');
 let numBalls;
-
+let ballPos;
 //box movement
 let boxX = 20;
 const moveBox = 20;
@@ -28,14 +28,11 @@ let nums = 0;
 
 //ballFall animation
 function fallAnimation() {
-
     nums++;
     console.log(nums);
-
     if (nums < 300) {
         requestAnimationFrame(fallAnimation);
     }
-
 
 }
 
@@ -45,14 +42,20 @@ function move(theball) {
     ballPos = 0;
     ballPos += 5;
     theball.style.transform = `translateY(${ballPos}px)`;
-    let hh = document.body.clientHeight - 250;
+    let hh = document.body.clientHeight - 10;
     if (ballPos < hh) {
         requestAnimationFrame(move);
     }
 }
 
+
+
+
+
 window.requestAnimationFrame(move);
 
+
+move(ball);
 
 //create Ball
 function theBall() {
@@ -66,13 +69,12 @@ function theBall() {
     move(newball);
 }
 
-theBall();
 
 //spawnBall
 function spawnBall() {
     numBalls = Math.floor(Math.random() * 3) + 1;   //Generates a random number on how many balls will spawn
     for (let i = 0; i < numBalls; i++) {
-        // theBall();
+        //theBall();
     }
 
 }
